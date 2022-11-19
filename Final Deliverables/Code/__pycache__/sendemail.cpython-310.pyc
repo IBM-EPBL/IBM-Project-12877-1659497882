@@ -1,0 +1,16 @@
+o
+    ¾pcŞ  ã                   @   sT   d dl Z d dlZd dlZd dlmZmZmZmZ dZe  	dd¡Z
+dd„ Zdd	„ ZdS )
+é    N)ÚMailÚEmailÚToÚContentzInterview Callúsmtp.gmail.coméK  c                 C   sN   t dƒ t dd¡}| ¡  | dd¡ d t| ¡}| d||¡ | ¡  d S )Nz&sorry we cant process your candidaturer   r   ú19cs034@syedengg.co.inz
+#Good2002$zSubject: {}
+
+{})	ÚprintÚsmtplibÚSMTPZstarttlsÚloginÚformatÚSUBJECTÚsendmailÚquit)ÚTEXTÚemailÚsÚmessage© r   ú<D:\Python\SPS-10472-Skill-Job-Recommender--main\sendemail.pyr      s   r   c           
+      C   sd   t  d¡}tdƒ}t| ƒ}d}td|ƒ}t||||ƒ}| ¡ }|jjj	 
+¡ }	t|	jƒ t|	jƒ d S )NzESG.v0JnqDtcTQq-HoPEwCITBw.WzWmwsW78xQJuy9YnSRSP-6D07QG9Wdr1lV0qvgJuEgr   zSending with SendGrid is Funz
+text/plain)ÚsendgridZSendGridAPIClientr   r   r   r   ÚgetÚclientÚmailÚbatchÚpostr	   Ústatus_codeÚheaders)
+Úuserr   ZsgZ
+from_emailZto_emailÚsubjectÚcontentr   Z	mail_jsonÚresponser   r   r   Úsendgridmail   s   
+
+
+r#   )r
+   r   ÚosZsendgrid.helpers.mailr   r   r   r   r   r   r   r   r#   r   r   r   r   Ú<module>   s    
